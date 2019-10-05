@@ -1,0 +1,17 @@
+  * console.dir() => when curious about whole structure 
+  * document.querySelector("#.
+  * obj.classList.add
+                 .remove .contains  .toggle
+  * setInterval(func, 1000); => timer
+  * localStorage.setItem("nico", true);
+    localStorage.getItem("nico")
+  * form.addEventListener("submit", handleSubmit);
+  * event.preventDefault()
+  * JSON.stringify() => object array->jasonString
+    JSON.parse() => jasonString->object array
+  * array.forEach(func(obj) { 
+  * array.filter(func(obj) { 
+  * REST API call
+   fetch ("http://...")
+   .then(fuction(response) {return response.json();})
+   .then(function(json) { json.xxxx.xxxx });
