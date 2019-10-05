@@ -15,3 +15,9 @@
    fetch ("http://...")
    .then(fuction(response) {return response.json();})
    .then(function(json) { json.xxxx.xxxx });
+
+
+https://home.openweathermap.org/
+jinyoung777@gmail.com / Kimgyver6(
+
+https://api.openweathermap.org/data/2.5/weather?lat=-36.8003362&lon=174.73157999999998&appid=db924aa1722406eb1fb28407c06cf5a0&units=metric
