@@ -15,6 +15,7 @@
    fetch ("http://...")
    .then(fuction(response) {return response.json();})
    .then(function(json) { json.xxxx.xxxx });
+  * object key/value
 
 
 https://home.openweathermap.org/

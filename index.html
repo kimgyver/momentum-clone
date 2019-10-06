@@ -3,22 +3,30 @@
         <meta charset="utf-8"/>
         <title>Something</title>
         <link rel="stylesheet" href="index.css">
+        <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script-->
     </head>
 
     <body>
+        <center>
+        <h4 class="js-greetings greetings"></h4>
         <div class="js-clock">
             <h1>00:00</h1>
         </div>
         <form class="js-form">
             <input type="text" placeholder="What is your name?"/>
         </form>
+        </center>
         <form class="js-todoForm">
             <input type="text" placeholder="Write a to do"/>
         </form>
         <ul class="js-todoList">
         </ul>
+        <center>
         <span class="js-weather"></span>
-        <h4 class="js-greetings greetings"></h4>
+        <p></p>
+        <span class="js-weather-forecast"></span>
+        </center>
         <script src="clock.js"></script>
         <script src="greeting.js"></script>
         <script src="todo.js"></script>
