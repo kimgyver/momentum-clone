@@ -11,7 +11,7 @@ const weatherImage = {
     'broken clouds': '60c',
     'overcast clouds': '100c',
     'light rain': '50r',
-    'heavy rain': 'r',
+    'moderate rain': 'r',
     'shower rain': 'sh'
 };
 
