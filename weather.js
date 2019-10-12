@@ -54,13 +54,20 @@ function getWeatherForecast(lat, lng) {
         
         let text = "<table><tr><td>";
         let prevDate = "";
+        let hourGap = 0;
+        if (lng > 120 && lng < 130) {
+            hourGap = 8;    // Korea
+        } else if (lng > 170 && lng < 180) {
+            hourGap = 12;   // NZ
+        }
+
 //        json.list.forEach(function(element) {
         let element = null;
         for (i = 0; i < 24; i ++) {
             element = json.list[i];
             const date = new Date(element.dt_txt);
             let changedDate = new Date();
-            changedDate.setTime(date.getTime() + 12*60*60000); // GMT+12
+            changedDate.setTime(date.getTime() + hourGap*60*60000); // GMT+hourGap
             if (changedDate.getDate() !== prevDate) {
                 const yearmonthday = date2string(changedDate, true, false);
                 text += `</td><td style="vertical-align:top"><center>${yearmonthday}</center><hr>`;
