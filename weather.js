@@ -58,7 +58,7 @@ function getWeatherForecast(lat, lng) {
         if (lng > 120 && lng < 130) {
             hourGap = 8;    // Korea
         } else if (lng > 170 && lng < 180) {
-            hourGap = 12;   // NZ
+            hourGap = 13;   // NZ
         }
 
 //        json.list.forEach(function(element) {
