@@ -52,7 +52,7 @@ function getWeatherForecast(lat, lng) {
     .then(function(json) {
         // console.log(json);
         
-        let text = "<table><tr><td>";
+        let text = "<div class='weather'>";
         let prevDate = "";
         let hourGap = 0;
         if (lng > 120 && lng < 130) {
@@ -69,17 +69,18 @@ function getWeatherForecast(lat, lng) {
             let changedDate = new Date();
             changedDate.setTime(date.getTime() + hourGap*60*60000); // GMT+hourGap
             if (changedDate.getDate() !== prevDate) {
+                if (i != 0) {text += "</div>"; }
                 const yearmonthday = date2string(changedDate, true, false);
-                text += `</td><td style="vertical-align:top"><center>${yearmonthday}</center><hr>`;
+                text += `<div class='day'><div class='day-display'>${yearmonthday}</div>`;
             }
             const datetime = date2string(changedDate, false, true);
             prevDate = changedDate.getDate();
             const weatherDesc = getWeatherImage(element.weather[0].description) + element.weather[0].description;
             const temperature = parseFloat(element.main.temp).toFixed(1); // precision change
-            text += `${datetime} ${temperature}°C ${weatherDesc} <br>`;
+            text += `<div class='time-weather'>${datetime} ${temperature}°C ${weatherDesc} </div>`;
         }
         // });
-        text += "</td></tr></table>"
+        text += "</div>";  // end of wether
         weatherForecast.innerHTML = text;
     });
 }
