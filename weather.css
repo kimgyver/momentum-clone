@@ -1,23 +1,23 @@
 .weather {
-    max-width: 1000px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    /* justify-content: center; */
-    justify-content: space-between;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
 }
 
 .weather .day {
-    min-width: 12rem;
-    /* width: 250px; */
+  min-width: 12rem;
+  /* width: 250px; */
 }
 
 .weather .day .day-display {
-    text-align: center;
-    text-decoration: underline;
-    margin-bottom: 1rem;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 1rem;
 }
 
 .weather .day .time-weather {
-    text-align: left;
+  text-align: left;
 }
