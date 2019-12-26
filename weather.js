@@ -36,11 +36,15 @@ function date2string(date, showDate, showTime) {
   if (showDate) {
     text += `${year}-${month}-${day < 10 ? `0${day}` : day} `;
   }
+  // if (showTime) {
+  //   text += `${hours < 10 ? `0${hours}` : hours}:${
+  //     minutes < 10 ? `0${minutes}` : minutes
+  //   }`;
+  // }
   if (showTime) {
-    text += `${hours < 10 ? `0${hours}` : hours}:${
-      minutes < 10 ? `0${minutes}` : minutes
-    }`;
+    text += `${hours < 10 ? `0${hours}` : hours}H`;
   }
+
   return text;
 }
 
