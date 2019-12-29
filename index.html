@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="weather.css" />
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script-->
   </head>
 
   <body>
-    <center>
-      <h4 class="js-greetings greetings"></h4>
-      <div class="js-clock">
-        <h1>00:00</h1>
+    <div class="heading">
+      <div class="left`"></div>
+      <div class="center">
+        <h4 class="js-greetings greetings"></h4>
+        <div class="js-clock">
+          <h1>00:00</h1>
+        </div>
+        <form class="js-form">
+          <input type="text" placeholder="What is your name?" />
+        </form>
       </div>
-      <form class="js-form">
-        <input type="text" placeholder="What is your name?" />
-      </form>
-    </center>
-    <form class="js-todoForm">
-      <input type="text" placeholder="Write a to do" />
-    </form>
-    <ul class="js-todoList"></ul>
+      <div class="right">
+        <form class="js-todoForm"></form>
+        <ul class="js-todoList">
+          <a href="javascript:toggleTodoInput()" class="todo-link">To-Do</a>
+        </ul>
+      </div>
+    </div>
+
     <center>
       <span class="js-weather"></span>
       <p></p>
