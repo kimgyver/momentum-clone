@@ -34,13 +34,11 @@ function date2string(date, showDate, showTime) {
   const seconds = date.getSeconds();
   let text = '';
   if (showDate) {
-    text += `${year}-${month}-${day < 10 ? `0${day}` : day} `;
+    text += `${day < 10 ? `0${day}` : day}/${
+      month < 10 ? `0${month}` : month
+    }/${year} `;
   }
-  // if (showTime) {
-  //   text += `${hours < 10 ? `0${hours}` : hours}:${
-  //     minutes < 10 ? `0${minutes}` : minutes
-  //   }`;
-  // }
+
   if (showTime) {
     text += `${hours < 10 ? `0${hours}` : hours}H`;
   }
