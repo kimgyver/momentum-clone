@@ -6,8 +6,6 @@ const TODOS_LS = 'todos';
 
 let todos = [];
 
-function add() {}
-
 function toggleTodoInput() {
   todoInput = todoForm.querySelector('input');
   todoAnchor = todoForm.querySelector('a');
