@@ -14,8 +14,9 @@ body {
   justify-content: space-between;
 }
 
-.delBtn {
-  cursor: pointer;
+#page-wrap {
+  position: relative;
+  z-index: 2;
 }
 
 .todo-link {
@@ -46,6 +47,14 @@ h1 {
   display: none;
 }
 
+.js-todoForm {
+  display: flex;
+}
+
+.add-anchor {
+  margin-top: 1rem;
+}
+
 .showing {
   display: block;
 }
@@ -59,7 +68,7 @@ h1 {
   }
 }
 
-.bgImage {
+/* .bgImage {
   position: absolute;
   top: 0;
   left: 0;
@@ -67,4 +76,29 @@ h1 {
   height: 100%;
   z-index: -1;
   animation: fadeIn 0.7s linear;
+} */
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+.bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+/* label underline focus color */
+input:focus {
+  border-bottom: 1px solid white !important;
+  box-shadow: 0 1px 0 0 white !important;
+  color: white !important;
 }

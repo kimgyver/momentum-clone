@@ -106,7 +106,7 @@ function getCurrentWeather(lat, lng) {
         json.weather[0].description;
       const temperature = json.main.temp;
       const place = json.name;
-      weather.innerHTML = `<div style="font-size: 1rem">${weatherDesc} ${temperature}°C @ ${place}</div>`;
+      weather.innerHTML = `<div style="font-size: 1.2rem">${weatherDesc} ${temperature}°C @ ${place}</div>`;
     });
 }
 

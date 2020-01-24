@@ -3,35 +3,48 @@
     <meta charset="utf-8" />
     <title>Weather</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="weather.css" />
+
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
 
   <body>
-    <div class="heading">
-      <div class="left`"></div>
-      <div class="center">
-        <h4 class="js-greetings greetings"></h4>
-        <div class="js-clock">
-          <h1>00:00</h1>
+    <div id="page-wrap">
+      <div class="heading">
+        <div class="left`"></div>
+        <div class="center">
+          <h5 class="js-greetings greetings"></h5>
+          <div class="js-clock">
+            <h3>00:00</h3>
+          </div>
+          <form class="js-form">
+            <input type="text" placeholder="What is your name?" />
+          </form>
         </div>
-        <form class="js-form">
-          <input type="text" placeholder="What is your name?" />
-        </form>
+        <div class="right">
+          <form class="js-todoForm"></form>
+          <ul class="js-todoList with-header">
+            <a href="javascript:toggleTodoInput()" class="todo-link">To-Do</a>
+          </ul>
+        </div>
       </div>
-      <div class="right">
-        <form class="js-todoForm"></form>
-        <ul class="js-todoList">
-          <a href="javascript:toggleTodoInput()" class="todo-link">To-Do</a>
-        </ul>
-      </div>
+
+      <center>
+        <span class="js-weather"></span>
+        <p></p>
+        <span class="js-weather-forecast"></span>
+      </center>
     </div>
 
-    <center>
-      <span class="js-weather"></span>
-      <p></p>
-      <span class="js-weather-forecast"></span>
-    </center>
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>
