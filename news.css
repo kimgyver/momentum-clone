@@ -78,7 +78,7 @@ article .article-description {
 
 .category.selected {
   /* text-decoration: underline; */
-  color: black;
+  /* color: black; */
   border: 2px solid red;
 }
 
