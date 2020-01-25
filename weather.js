@@ -59,10 +59,12 @@ function getWeatherForecast(lat, lng) {
       let text = "<div class='weather'>";
       let prevDate = '';
       let hourGap = 0;
-      if (lng > 120 && lng < 130) {
-        hourGap = 8; // Korea
+      if (lng > 124 && lng < 130) {
+        hourGap = 9; // Korea
       } else if (lng > 170 && lng < 180) {
         hourGap = 13; // NZ
+      } else if (lng > 117 && lng < 123) {
+        hourGap = 8; // Philippins
       }
 
       json.list.forEach(function(element, i) {
@@ -124,6 +126,7 @@ function handleGeoSuccess(position) {
   };
   saveCoords(coodsObj);
   getCurrentWeather(latitude, longitude);
+  getWeatherForecast(latitude, longitude);
 }
 
 function handleGeoError() {

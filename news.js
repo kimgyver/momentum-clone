@@ -39,12 +39,10 @@ const getNews = (sources, country, domains) => {
       return response.json();
     })
     .then(function(json) {
-      console.log(json);
-
       textHTML = "<div class='articles-container'>";
 
       json.articles.forEach(article => {
-        console.log(article.title);
+        //console.log(article.title);
 
         textHTML += `<article class='card'>
                 <img src="${
@@ -61,10 +59,10 @@ const getNews = (sources, country, domains) => {
         //console.log(article.title, article.description);
       });
       textHTML += '</div>';
-      console.log(textHTML);
+      //console.log(textHTML);
 
       const articlesFrame = document.querySelector('.articles-frame');
-      console.log(articlesFrame);
+      //console.log(articlesFrame);
       articlesFrame.innerHTML = textHTML;
     });
 };
