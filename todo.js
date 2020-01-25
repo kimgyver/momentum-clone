@@ -1,6 +1,7 @@
 const todoForm = document.querySelector('.js-todoForm');
 let todoInput = todoForm.querySelector('input');
 const todoList = document.querySelector('.js-todoList');
+const todoLink = document.querySelector('.todo-link');
 
 const TODOS_LS = 'todos';
 
@@ -20,6 +21,7 @@ function toggleTodoInput() {
     if (isMobile) {
       newsButton.style.display = 'block';
     }
+    todoLink.textContent = 'To-Do';
   } else {
     divRight.classList.add('selected');
     todoInput = document.createElement('input');
@@ -35,9 +37,7 @@ function toggleTodoInput() {
       newsButton.style.display = 'none';
     }
     todoInput.focus();
-    todoInput.addEventListener('focusout', () => {
-      toggleTodoInput();
-    });
+    todoLink.textContent = 'Close';
   }
 }
 
