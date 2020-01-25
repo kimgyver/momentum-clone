@@ -76,6 +76,12 @@ article .article-description {
   background: var(--stuff);
 }
 
+.category.selected {
+  /* text-decoration: underline; */
+  color: black;
+  border: 2px solid red;
+}
+
 @media only screen and (max-width: 800px) and (min-width: 650px) {
   .articles-frame {
     margin: 0 2rem;

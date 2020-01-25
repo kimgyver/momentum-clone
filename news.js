@@ -14,18 +14,44 @@ const readNewsBySavedCategory = () => {
   getNewsByCategory(savedCatgory);
 };
 
+const selectButton = category => {
+  document.querySelector('.category-nz').classList.remove('selected');
+  document.querySelector('.category-stuff').classList.remove('selected');
+  document.querySelector('.category-bbc').classList.remove('selected');
+  document.querySelector('.category-us').classList.remove('selected');
+  document.querySelector('.category-kr').classList.remove('selected');
+
+  if (category === 'nz') {
+    document.querySelector('.category-nz').classList.add('selected');
+  } else if (category === 'stuff.co.nz') {
+    document.querySelector('.category-stuff').classList.add('selected');
+  } else if (category === 'bbc-news') {
+    document.querySelector('.category-bbc').classList.add('selected');
+  } else if (category === 'wsj.com,nytimes.com') {
+    document.querySelector('.category-us').classList.add('selected');
+  } else if (category === 'kr') {
+    document.querySelector('.category-kr').classList.add('selected');
+  }
+};
+
 const getNewsByCategory = category => {
   if (category === 'nz') {
     getNews('', 'nz', '');
+    document.querySelector('.category-nz').classList.add('selected');
   } else if (category === 'stuff.co.nz') {
     getNews('', '', 'stuff.co.nz');
+    document.querySelector('.category-stuff').classList.add('selected');
   } else if (category === 'bbc-news') {
     getNews('bbc-news', '', '');
+    document.querySelector('.category-bbc').classList.add('selected');
   } else if (category === 'wsj.com,nytimes.com') {
     getNews('', '', 'wsj.com,nytimes.com');
+    document.querySelector('.category-us').classList.add('selected');
   } else if (category === 'kr') {
     getNews('', 'kr', '');
+    document.querySelector('.category-kr').classList.add('selected');
   }
+  selectButton(category);
 };
 
 const getNews = (sources, country, domains) => {
