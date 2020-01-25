@@ -35,6 +35,9 @@ function toggleTodoInput() {
       newsButton.style.display = 'none';
     }
     todoInput.focus();
+    todoInput.addEventListener('focusout', () => {
+      toggleTodoInput();
+    });
   }
 }
 
