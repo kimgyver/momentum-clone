@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page-1-color: steelblue;
+  --page-2-color: tan;
+  --page-3-color: teal;
+  --page-4-color: slateblue;
+  --animate-speed: 2s;
+}
 
 body {
   box-sizing: border-box;
@@ -19,13 +33,35 @@ body {
   z-index: 2;
 }
 
+#page-1 {
+  height: 100vh;
+  background-size: cover;
+  /* background-size: 100% 100%; */
+}
+#page-2 {
+  background: var(--page-2-color);
+}
+#page-3 {
+  background: var(--page-3-color);
+}
+#page-4 {
+  background: var(--page-4-color);
+}
+
 .todo-link {
-  padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+  padding: 0.2rem 0.4rem;
+  margin-right: 0.5rem;
+  /* margin-top: 0.5rem; */
   font-weight: bold;
   color: #333;
   text-decoration: none;
   border-radius: 5px;
   background: #fff;
+}
+
+.todo-link:hover {
+  background: #26a69a;
+  color: #f4f4f4;
 }
 
 .btn {
@@ -53,10 +89,19 @@ h1 {
 
 .add-anchor {
   margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.add-anchor:hover {
+  color: #fff;
 }
 
 .showing {
   display: block;
+}
+
+.news-link {
+  margin: 0.5rem 0.5rem;
 }
 
 @keyframes fadeIn {

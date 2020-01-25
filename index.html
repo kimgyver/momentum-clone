@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="weather.css" />
+    <link rel="stylesheet" href="news.css" />
 
     <!-- Compiled and minified CSS -->
     <link
@@ -18,37 +19,108 @@
   </head>
 
   <body>
-    <div id="page-wrap">
-      <div class="heading">
-        <div class="left`"></div>
-        <div class="center">
-          <h5 class="js-greetings greetings"></h5>
-          <div class="js-clock">
-            <h3>00:00</h3>
+    <section id="page-1" class="page">
+      <div id="page-wrap">
+        <div class="heading">
+          <div class="left`">
+            <a href="#page-2" class="news-link btn">News</a>
           </div>
-          <form class="js-form">
-            <input type="text" placeholder="What is your name?" />
-          </form>
-        </div>
-        <div class="right">
-          <form class="js-todoForm"></form>
-          <ul class="js-todoList with-header">
+          <div class="center">
+            <h5 class="js-greetings greetings"></h5>
+            <div class="js-clock">
+              <h3>00:00</h3>
+            </div>
+            <form class="js-form">
+              <input type="text" placeholder="What is your name?" />
+            </form>
+          </div>
+          <div class="right">
+            <form class="js-todoForm"></form>
             <a href="javascript:toggleTodoInput()" class="todo-link">To-Do</a>
-          </ul>
+            <ul class="js-todoList with-header"></ul>
+          </div>
+        </div>
+
+        <center>
+          <span class="js-weather"></span>
+          <p></p>
+          <span class="js-weather-forecast"></span>
+        </center>
+      </div>
+    </section>
+
+    <!-- Page2 -->
+    <section id="page-2" class="page">
+      <div class="header">
+        <!-- <h1>Page2</!-->
+        <div>
+          <a href="#page-1" class="news-link btn btn-dark"
+            >Weather<i class="fas fa-arrow-circle-up"></i
+          ></a>
+        </div>
+
+        <h4>
+          <img src="./images/news-icon.png" width="25" height="25" /> News
+        </h4>
+
+        <div class="category-menu">
+          <a href="#!" onclick="getNewsByCategory('nz'); saveCategory('nz'); ">
+            <div class="category category-nz">&nbsp; NZ &nbsp;</div></a
+          >
+          <a
+            href="#!"
+            onclick="getNewsByCategory('stuff.co.nz'); saveCategory('stuff.co.nz');"
+          >
+            <div class="category category-stuff">Stuff</div></a
+          >
+          <a
+            href="#!"
+            onclick="getNewsByCategory('bbc-news'); saveCategory('bbc-news'); "
+          >
+            <div class="category category-bbc">BBC</div></a
+          >
+          <a
+            href="#!"
+            onclick="getNewsByCategory('wsj.com,nytimes.com'); saveCategory('wsj.com,nytimes.com'); "
+          >
+            <div class="category category-us">WSJ</div></a
+          >
+          <a href="#!" onclick="getNewsByCategory('kr'); saveCategory('kr'); ">
+            <div class="category category-kr">Korea</div></a
+          >
         </div>
       </div>
 
-      <center>
-        <span class="js-weather"></span>
-        <p></p>
-        <span class="js-weather-forecast"></span>
-      </center>
-    </div>
+      <div class="articles-frame"></div>
+    </section>
 
     <script src="clock.js"></script>
     <script src="greeting.js"></script>
     <script src="todo.js"></script>
     <script src="bg.js"></script>
     <script src="weather.js"></script>
+    <script src="news.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      // Smooth scrolling
+      $('.btn').on('click', function(event) {
+        if (this.hash !== '') {
+          event.preventDefault();
+          const hash = this.hash;
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            800
+          );
+        }
+      });
+    </script>
   </body>
 </html>
