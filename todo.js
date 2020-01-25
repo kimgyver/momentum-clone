@@ -9,11 +9,19 @@ let todos = [];
 function toggleTodoInput() {
   todoInput = todoForm.querySelector('input');
   todoAnchor = todoForm.querySelector('a');
+  const isMobile = window.innerWidth < 640;
+  newsButton = document.querySelector('#news-button');
+  divRight = document.querySelector('.right'); //background: var(--page-3-color);slateblue
 
   if (todoInput) {
+    divRight.classList.remove('selected');
     todoInput.remove();
     todoAnchor.remove();
+    if (isMobile) {
+      newsButton.style.display = 'block';
+    }
   } else {
+    divRight.classList.add('selected');
     todoInput = document.createElement('input');
     todoInput.setAttribute('type', 'text');
     todoInput.setAttribute('placeholder', 'Write a to do');
@@ -23,6 +31,10 @@ function toggleTodoInput() {
     todoAnchor.className = 'add-anchor';
     todoAnchor.innerHTML = 'Add';
     todoForm.appendChild(todoAnchor);
+    if (isMobile) {
+      newsButton.style.display = 'none';
+    }
+    todoInput.focus();
   }
 }
 
@@ -35,6 +47,7 @@ function deleteTodo(event) {
   });
   todos = cleanTodos;
   saveTodos();
+  updateTodoAppearance();
 }
 
 function saveTodos() {
@@ -78,6 +91,7 @@ function handleSubmit(event) {
   }
   paintTodo(currentValue);
   todoInput.value = '';
+  updateTodoAppearance();
 }
 
 function loadTodos() {
@@ -88,7 +102,21 @@ function loadTodos() {
       paintTodo(todo.text);
     });
   }
+  updateTodoAppearance();
 }
+
+const updateTodoAppearance = () => {
+  divRight = document.querySelector('.js-todoList');
+  const loadedTodos = localStorage.getItem(TODOS_LS);
+  if (loadedTodos !== null) {
+    const parseTodos = JSON.parse(loadedTodos);
+    if (parseTodos.length > 0) {
+      divRight.classList.add('selected');
+    } else {
+      divRight.classList.remove('selected');
+    }
+  }
+};
 
 function init() {
   loadTodos();

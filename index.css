@@ -23,7 +23,7 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   line-height: 1.4;
-  background-color: #2c3e50;
+  background-color: var(--page-1-color);
   color: #ffffff;
 }
 
@@ -31,10 +31,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.right {
-  margin-top: 0.5rem;
 }
 
 #page-wrap {
@@ -45,9 +41,10 @@ body {
 #page-1 {
   height: 100vh;
   background-size: cover;
-  background: var(--page-1-color);
+  /* background: var(--page-1-color); */
   /* background-size: 100% 100%; */
 }
+
 #page-2 {
   background: var(--page-2-color);
 }
@@ -56,21 +53,6 @@ body {
 }
 #page-4 {
   background: var(--page-4-color);
-}
-
-.todo-link {
-  padding: 0.2rem 0.4rem;
-  margin-right: 0.2rem;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
-  border-radius: 5px;
-  background: #fff;
-}
-
-.todo-link:hover {
-  background: #26a69a;
-  color: #f4f4f4;
 }
 
 .btn {
@@ -92,19 +74,6 @@ h1 {
   display: none;
 }
 
-.js-todoForm {
-  display: flex;
-}
-
-.add-anchor {
-  margin-top: 1rem;
-  margin-right: 0.5rem;
-}
-
-.add-anchor:hover {
-  color: #fff;
-}
-
 .showing {
   display: block;
 }
@@ -115,9 +84,6 @@ h1 {
 
 .prevent-image-check-label {
   color: #fff;
-}
-.prevent-image-check-span {
-  /* color: #fff !important; */
 }
 
 @keyframes fadeIn {

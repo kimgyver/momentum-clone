@@ -1,0 +1,51 @@
+.right {
+  margin-top: 0.4rem;
+  padding: 0 0 0 0;
+  border-radius: 0;
+}
+
+.right.selected {
+  padding: 0 0 0.3rem 0.5rem;
+  border-radius: 1rem;
+  background: slateblue;
+}
+
+.js-todoList {
+  padding: 0 0 0 0;
+  border-radius: 0;
+}
+.js-todoList.selected {
+  padding: 0.3rem 0 0.3rem 0.5rem;
+  border-radius: 1rem;
+  background: slateblue;
+  /* background: blue; */
+}
+
+.todo-link {
+  padding: 0.2rem 0.4rem;
+  margin-right: 0.2rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.todo-link:hover {
+  background: #26a69a;
+  color: #f4f4f4;
+}
+
+.js-todoForm {
+  display: flex;
+}
+
+.add-anchor {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  color: #ccc;
+}
+
+.add-anchor:hover {
+  color: #fff;
+}
