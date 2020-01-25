@@ -119,3 +119,10 @@ input:focus {
   box-shadow: 0 1px 0 0 white !important;
   color: white !important;
 }
+
+@media (max-width: 650px) {
+  .btn-page-anchor {
+    padding-left: 0.3rem !important;
+    padding-right: 0.3rem !important;
+  }
+}
