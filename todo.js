@@ -9,6 +9,7 @@ let todos = [];
 function toggleTodoInput() {
   todoInput = todoForm.querySelector('input');
   todoAnchor = todoForm.querySelector('a');
+
   if (todoInput) {
     todoInput.remove();
     todoAnchor.remove();

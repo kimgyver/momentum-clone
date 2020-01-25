@@ -82,6 +82,13 @@ article .article-description {
   border: 2px solid red;
 }
 
+.prevent-image-check {
+  /* text-align: right; */
+}
+input.checkbox {
+  /* display: inline-block; */
+}
+
 @media only screen and (max-width: 800px) and (min-width: 650px) {
   .articles-frame {
     margin: 0 2rem;

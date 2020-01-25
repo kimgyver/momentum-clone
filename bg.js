@@ -7,16 +7,12 @@ function paintImage(imgNumber) {
   image.src = `images/${imgNumber + 1}.jpg`;
   image.classList.add('bgImage');
 
-  // const div = document.createElement('div');
-  // div.classList.add('bg');
-  // body.appendChild(div);
-
-  // div.appendChild(image);
   const page1 = document.querySelector('#page-1');
-  //page1.setBackgroundImage(image);
-  console.log(`url(${image.src})`);
+  //console.log(`url(${image.src})`);
 
-  page1.style.backgroundImage = `url(${image.src})`;
+  if (localStorage.getItem('prevent-image') !== 'true') {
+    page1.style.backgroundImage = `url(${image.src})`;
+  }
 }
 
 function genRandom() {
