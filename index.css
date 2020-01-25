@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+#header {
+  position: sticky;
+  top: 0;
+}
+
 :root {
   --page-1-color: steelblue;
   --page-2-color: tan;
