@@ -42,8 +42,15 @@
           </div>
           <div class="right">
             <form class="js-todoForm"></form>
-            <a href="javascript:toggleTodoInput()" class="todo-link">To-Do</a>
-            <ul class="js-todoList with-header"></ul>
+            <a
+              onclick="javascript:{revertChange();toggleTodoInput();}"
+              class="todo-link"
+              >To-Do</a
+            >
+            <ul
+              class="js-todoList with-header"
+              style="list-style-type: none;"
+            ></ul>
           </div>
         </div>
 

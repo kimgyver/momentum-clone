@@ -96,7 +96,7 @@ const initializePreventImageCheckbox = () => {
     localStorage.setItem('prevent-image', checkbox.checked);
   });
 
-  console.log('initial value:', localStorage.getItem('prevent-image'));
+  //console.log('initial value:', localStorage.getItem('prevent-image'));
   checkbox.checked = localStorage.getItem('prevent-image') === 'true';
 };
 

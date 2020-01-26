@@ -2,6 +2,7 @@
   margin-top: 0.4rem;
   padding: 0 0 0 0;
   border-radius: 0;
+  max-width: 25rem;
 }
 
 .right.selected {
@@ -17,7 +18,7 @@
 .js-todoList.selected {
   padding: 0.3rem 0rem 0.3rem 0.4rem;
   margin-right: 0.1rem;
-  border-radius: 1.5rem;
+  border-radius: 0.4rem;
   background: slateblue;
   opacity: 0.8;
 }
@@ -37,6 +38,22 @@
   color: #f4f4f4;
 }
 
+li.collection-item a {
+  color: white;
+}
+
+li.collection-item.selected-item a {
+  font-weight: bold;
+  color: yellow;
+}
+.list-dot {
+  margin-right: 0.3rem;
+}
+
+.list-button {
+  margin-left: 0.3rem;
+}
+
 .js-todoForm {
   display: flex;
 }
@@ -49,4 +66,10 @@
 
 .add-anchor:hover {
   color: #fff;
+}
+
+@media (max-width: 650px) {
+  .right {
+    max-width: 14rem;
+  }
 }
