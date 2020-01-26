@@ -37,6 +37,9 @@ function toggleTodoInput() {
 
 function deleteTodo(event) {
   const btn = event.target;
+
+  event.stopPropagation();
+
   const li = btn.parentNode;
   todoList.removeChild(li);
   const cleanTodos = todos.filter(function(todo) {
@@ -57,6 +60,8 @@ function resetSelection() {
 function changeTodo(event) {
   //console.log(event.target);
   if (event === null || event.target === null) return;
+
+  event.stopPropagation();
 
   resetSelection();
 
@@ -190,10 +195,32 @@ function createInput() {
   }
 }
 
+function initializeClickListenerForToggle() {
+  window.addEventListener('click', event => {
+    if (event === null || event.target === null) return;
+    //console.log(event.target);
+
+    const divRightSelected = document.querySelector('.right.selected');
+    if (divRightSelected === null) return;
+
+    if (divRightSelected.contains(event.target) === false) {
+      //console.log(divRightSelected, 'CONTAINS ', event.target);
+
+      resetSelection();
+
+      if (todoInput.style.display !== 'none') {
+        toggleTodoInput();
+      }
+    }
+  });
+}
+
 function init() {
   loadTodos();
   todoForm.addEventListener('submit', handleSubmit);
   createInput();
+
+  initializeClickListenerForToggle();
 }
 
 init();
