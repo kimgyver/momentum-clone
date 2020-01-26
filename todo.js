@@ -70,6 +70,7 @@ function changeTodo(event) {
   parentLi.classList.add('selected-item');
   todoInput.value = selectedTextNode.textContent;
   //todoInput.select();
+  todoInput.selected = false;
   todoInput.focus();
   todoAnchor.textContent = 'Update';
 }
