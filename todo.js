@@ -45,9 +45,10 @@ function deleteTodo(event) {
   todos = cleanTodos;
   saveTodos();
   updateTodoAppearance();
+  resetSelection();
 }
 
-function revertChange() {
+function resetSelection() {
   const prevSelectedItem = document.querySelector('.selected-item');
   if (prevSelectedItem) prevSelectedItem.classList.remove('selected-item');
   todoInput.value = '';
@@ -57,7 +58,7 @@ function changeTodo(event) {
   //console.log(event.target);
   if (event === null || event.target === null) return;
 
-  revertChange();
+  resetSelection();
 
   if (todoInput.style.display === 'none') {
     toggleTodoInput();
@@ -70,8 +71,8 @@ function changeTodo(event) {
   parentLi.classList.add('selected-item');
   todoInput.value = selectedTextNode.textContent;
   //todoInput.select();
-  todoInput.selected = false;
   todoInput.focus();
+  todoInput.selected = false;
   todoAnchor.textContent = 'Update';
 }
 
@@ -86,7 +87,7 @@ function paintTodo(text) {
     if (li.classList.contains('selected-item')) {
       li.firstChild.lastChild.textContent = text;
       IDLi = li.id;
-      revertChange();
+      resetSelection();
       isChanging = true;
     }
   }
@@ -137,7 +138,7 @@ function handleSubmit(event) {
   }
   const currentValue = todoInput.value.trim();
   if (currentValue == '') {
-    revertChange();
+    resetSelection();
     toggleTodoInput();
     return;
   }
