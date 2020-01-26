@@ -69,7 +69,7 @@ function changeTodo(event) {
   const parentLi = event.target.parentNode.parentNode;
   parentLi.classList.add('selected-item');
   todoInput.value = selectedTextNode.textContent;
-  todoInput.select();
+  //todoInput.select();
   todoInput.focus();
   todoAnchor.textContent = 'Update';
 }
