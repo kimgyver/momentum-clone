@@ -15,7 +15,8 @@
   border-radius: 0;
 }
 .js-todoList.selected {
-  padding: 0.3rem 0 0.3rem 0.5rem;
+  padding: 0.3rem 0rem 0.3rem 0.5rem;
+  margin-right: 0.2rem;
   border-radius: 1rem;
   background: slateblue;
   opacity: 0.8;
