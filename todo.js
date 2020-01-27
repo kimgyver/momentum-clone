@@ -152,6 +152,7 @@ function handleSubmit(event) {
   todoInput.value = '';
   todoAnchor.textContent = 'Add';
   updateTodoAppearance();
+  todoInput.focus();
 }
 
 function loadTodos() {

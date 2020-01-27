@@ -71,7 +71,10 @@ function getWeatherForecast(lat, lng) {
         if (i > 23) {
           return;
         }
-        const date = new Date(element.dt_txt);
+        //const date = new Date(element.dt_txt);
+        var a = element.dt_txt.split(/[^0-9]/);
+        var date = new Date(a[0], a[1] - 1, a[2], a[3], a[4], a[5]);
+
         let changedDate = new Date();
         changedDate.setTime(date.getTime() + hourGap * 60 * 60000); // GMT+hourGap
         if (changedDate.getDate() !== prevDate) {
