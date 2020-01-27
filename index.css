@@ -25,7 +25,7 @@ body {
   line-height: 1.4;
   background-color: var(--page-1-color);
   color: #ffffff;
-  display: table;
+  /* display: table; */
 }
 
 .heading {
@@ -37,27 +37,27 @@ body {
 #page-wrap {
   position: relative;
   z-index: 2;
+  /* display: table-cell; */
 }
 
 #page-1 {
   height: 100vh;
   background-size: cover;
-  /* overflow: auto; */
-  display: table-row;
-
-  /* background: var(--page-1-color); */
-  /* background-size: 100% 100%; */
+  overflow: auto;
+  /* display: table-row; */
 }
 
 #page-2 {
   background: var(--page-2-color);
+  /* display: table-row; */
 }
 #page-3 {
   background: var(--page-3-color);
+  /* display: table-row; */
 }
-#page-4 {
+/* #page-4 {
   background: var(--page-4-color);
-}
+} */
 
 .btn {
   cursor: pointer;

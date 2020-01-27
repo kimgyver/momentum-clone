@@ -28,9 +28,9 @@
   .weather {
     flex-direction: column;
   }
-  /* #page-1 {
+  #page-1 {
     height: 1150px;
-  } */
+  }
 }
 
 @media (min-width: 700px) and (max-width: 1024px) {
@@ -38,7 +38,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  /* #page-1 {
+  #page-1 {
     height: 150vh;
-  } */
+  }
 }
