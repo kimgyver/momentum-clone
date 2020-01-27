@@ -78,7 +78,7 @@ article .article-description {
 
 .category.selected {
   border: 2px solid red;
-  padding: 0.4rem 0.6rem;
+  padding: calc(0.4rem-4px) calc(0.6rem-6px);
   color: yellow;
 }
 
@@ -119,7 +119,12 @@ article .article-description {
   }
 
   .category {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.4rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .category.selected {
+    padding: calc(0.2rem-4px) calc(0.4rem-6px);
   }
 }
