@@ -25,6 +25,7 @@ body {
   line-height: 1.4;
   background-color: var(--page-1-color);
   color: #ffffff;
+  display: table;
 }
 
 .heading {
@@ -42,7 +43,7 @@ body {
   height: 100vh;
   background-size: cover;
   /* overflow: auto; */
-  display: table;
+  display: table-row;
 
   /* background: var(--page-1-color); */
   /* background-size: 100% 100%; */
