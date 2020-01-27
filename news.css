@@ -78,6 +78,8 @@ article .article-description {
 
 .category.selected {
   border: 2px solid red;
+  padding: 0.4rem 0.6rem;
+  color: yellow;
 }
 
 @media only screen and (max-width: 800px) and (min-width: 650px) {
