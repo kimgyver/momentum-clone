@@ -41,6 +41,9 @@ body {
 #page-1 {
   height: 100vh;
   background-size: cover;
+  /* overflow: auto; */
+  display: table;
+
   /* background: var(--page-1-color); */
   /* background-size: 100% 100%; */
 }

@@ -71,17 +71,21 @@ const getNews = (sources, country, domains) => {
         textHTML += "<article class='card'>";
 
         if (localStorage.getItem('prevent-image') !== 'true') {
-          textHTML += `<img src="${
-            article.urlToImage ? article.urlToImage : './images/alt.jpg'
-          }"  alt=""/>`;
+          textHTML += `<a href="${article.url}" target="_target">
+                        <img src="${
+                          article.urlToImage
+                            ? article.urlToImage
+                            : './images/alt.jpg'
+                        }"  alt=""/>
+                       </a>`;
         }
-        textHTML += '<div>';
-        textHTML += `<a href="${article.url}" target="_target">
-                    <p class='article-title'>${article.title}</p>
-                </a>
-                    <p class='article-description'>${article.description}</p>
-                </div>
-            </article>`;
+        textHTML += '  <div>';
+        textHTML += `  <a href="${article.url}" target="_target">
+                         <p class='article-title'>${article.title}</p>
+                       </a>
+                      <p class='article-description'>${article.description}</p>
+                    </div>
+                  </article>`;
       });
       textHTML += '</div>';
 
