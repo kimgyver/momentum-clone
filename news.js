@@ -55,6 +55,12 @@ const getNewsByCategory = category => {
 };
 
 const getNews = (sources, country, domains) => {
+  const articleContainer = document.querySelector('.articles-container');
+  if (articleContainer) {
+    articleContainer.classList.add('overlay');
+    articleContainer.classList.add('loading');
+  }
+
   let url = `https://newsapi.org/v2/top-headlines?sources=${sources}&country=${country}&apiKey=dbd63c6023db48bcb79a14e20d25e360`;
   if (domains && domains !== '') {
     url = `https://newsapi.org/v2/everything?domains=${domains}&apiKey=dbd63c6023db48bcb79a14e20d25e360`;
