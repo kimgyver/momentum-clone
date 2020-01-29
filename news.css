@@ -46,7 +46,8 @@
 
 .articles-container img {
   width: 100%;
-  max-height: 180px;
+  max-height: 9.5rem;
+  object-fit: cover;
 }
 
 article .article-title {
@@ -125,6 +126,11 @@ article .article-description {
     grid-gap: 0.3rem;
     grid-row-gap: 0.3rem;
   }
+
+  .articles-container img {
+    max-height: 7.5rem;
+  }
+
   article .article-title {
     margin-top: 0.3rem;
     font-size: 0.9rem;
