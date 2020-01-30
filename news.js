@@ -20,6 +20,7 @@ const selectButton = category => {
   document.querySelector('.category-bbc').classList.remove('selected');
   document.querySelector('.category-us').classList.remove('selected');
   document.querySelector('.category-kr').classList.remove('selected');
+  document.querySelector('.category-in').classList.remove('selected');
 
   if (category === 'nz') {
     document.querySelector('.category-nz').classList.add('selected');
@@ -31,6 +32,8 @@ const selectButton = category => {
     document.querySelector('.category-us').classList.add('selected');
   } else if (category === 'kr') {
     document.querySelector('.category-kr').classList.add('selected');
+  } else if (category === 'in') {
+    document.querySelector('.category-in').classList.add('selected');
   }
 };
 
@@ -50,6 +53,9 @@ const getNewsByCategory = category => {
   } else if (category === 'kr') {
     getNews('', 'kr', '');
     document.querySelector('.category-kr').classList.add('selected');
+  } else if (category === 'in') {
+    getNews('', 'in', '');
+    document.querySelector('.category-in').classList.add('selected');
   }
   selectButton(category);
 };

@@ -81,6 +81,7 @@ article .article-description {
   --kr: #009cff;
   --us: #c72727;
   --stuff: blue;
+  --in: #0ba360;
 }
 
 .category-bbc {
@@ -97,6 +98,9 @@ article .article-description {
 }
 .category-stuff {
   background: var(--stuff);
+}
+.category-in {
+  background: var(--in);
 }
 
 .category.selected {
