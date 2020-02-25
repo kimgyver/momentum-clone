@@ -28,7 +28,7 @@ const selectButton = category => {
     document.querySelector('.category-stuff').classList.add('selected');
   } else if (category === 'bbc-news') {
     document.querySelector('.category-bbc').classList.add('selected');
-  } else if (category === 'wsj.com,nytimes.com') {
+  } else if (category === 'us') {
     document.querySelector('.category-us').classList.add('selected');
   } else if (category === 'kr') {
     document.querySelector('.category-kr').classList.add('selected');
@@ -47,8 +47,8 @@ const getNewsByCategory = category => {
   } else if (category === 'bbc-news') {
     getNews('bbc-news', '', '');
     document.querySelector('.category-bbc').classList.add('selected');
-  } else if (category === 'wsj.com,nytimes.com') {
-    getNews('', '', 'wsj.com,nytimes.com');
+  } else if (category === 'us') {
+    getNews('', 'us', '');
     document.querySelector('.category-us').classList.add('selected');
   } else if (category === 'kr') {
     getNews('', 'kr', '');
@@ -78,7 +78,7 @@ const getNews = (sources, country, domains) => {
       return response.json();
     })
     .then(function(json) {
-      textHTML = "<div class='articles-container'>";
+      textHTML = "<div class='articles-container overlay loading'>";
       json.articles.forEach(article => {
         textHTML += "<article class='card'>";
 
@@ -103,6 +103,14 @@ const getNews = (sources, country, domains) => {
 
       const articlesFrame = document.querySelector('.articles-frame');
       articlesFrame.innerHTML = textHTML;
+
+      setTimeout(() => {
+        const articleContainer = document.querySelector('.articles-container');
+        if (articleContainer) {
+          articleContainer.classList.remove('overlay');
+          articleContainer.classList.remove('loading');
+        }
+      }, 1000);    
     });
 };
 
