@@ -62,7 +62,14 @@ function getWeatherForecast(lat, lng) {
       if (lng > 124 && lng < 130) {
         hourGap = 9; // Korea
       } else if (lng > 170 && lng < 180) {
-        hourGap = 13; // NZ
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth() + 1;
+        if (currentMonth >= 10 || currentMonth <= 3) {
+          hourGap = 13; // NZ
+        }
+        else {
+          hourGap = 12; // NZ
+        }
       } else if (lng > 117 && lng < 123) {
         hourGap = 8; // Philippins
       }
