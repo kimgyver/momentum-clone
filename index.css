@@ -90,6 +90,19 @@ h1 {
   color: #fff;
 }
 
+.button-anchor {
+  display: inline-block;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  /* text-transform: uppercase; */
+  padding: 0.1rem 0.6rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin: 0 0 0.2rem 0.2rem;
+  background:  #009cff;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
