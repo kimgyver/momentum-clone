@@ -150,7 +150,7 @@ function askForCoords() {
 function loadCoords() {
   const loadedCoords = localStorage.getItem(COORDS);
   if (loadedCoords === null) {
-    weatherForecast.innerHTML = 'Please turn GPS on to know your location. (Required only once)';
+    weatherForecast.innerHTML = 'Please turn GPS on to know your location.<br>(Required only once)';
     askForCoords();
   } else {
     const parsedCoords = JSON.parse(loadedCoords);
