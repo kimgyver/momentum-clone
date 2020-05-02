@@ -95,7 +95,11 @@ const getNews = (sources, country, domains) => {
         textHTML += `  <a href="${article.url}" target="_target">
                          <p class='article-title'>${article.title}</p>
                        </a>
-                      <p class='article-description'>${article.description}</p>
+                      <p class='article-description'>${
+                        article.description.indexOf('����') !== -1 ?
+                        'Description of this article has errors.<br> Read the article by click.' :
+                        article.description
+                      }</p>
                     </div>
                   </article>`;
       });
