@@ -96,6 +96,7 @@ const getNews = (sources, country, domains) => {
                          <p class='article-title'>${article.title}</p>
                        </a>
                       <p class='article-description'>${
+                        article.description &&
                         article.description.indexOf('����') !== -1 ?
                         'Description of this article has errors.<br> Read the article by click.' :
                         article.description
