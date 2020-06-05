@@ -73,13 +73,24 @@ const getNews = (sources, country, domains) => {
   }
 
   const preventImage = localStorage.getItem('prevent-image') === 'true';
-  fetch(url)
+  //fetch(url)
+  const clientRequest = { url: url };
+  fetch('http://requestproxy-env.eba-q4apfqpn.ap-southeast-2.elasticbeanstalk.com/articles', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(clientRequest),
+  })
     .then(function(response) {
+      console.log(response);
       return response.json();
     })
     .then(function(json) {
+      console.log(json);
       textHTML = "<div class='articles-container overlay loading'>";
-      json.articles.forEach(article => {
+      //json.articles.forEach(article => {
+      json.forEach(article => {
         textHTML += "<article class='card'>";
 
         if (localStorage.getItem('prevent-image') !== 'true') {
