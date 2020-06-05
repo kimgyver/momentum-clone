@@ -75,7 +75,7 @@ const getNews = (sources, country, domains) => {
   const preventImage = localStorage.getItem('prevent-image') === 'true';
   //fetch(url)
   const clientRequest = { url: url };
-  fetch('http://requestproxy-env.eba-q4apfqpn.ap-southeast-2.elasticbeanstalk.com/articles', {
+  fetch('https://request-proxy-jason.herokuapp.com/articles', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
