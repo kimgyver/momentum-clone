@@ -12,7 +12,8 @@ const weatherImage = {
   'overcast clouds': '100c',
   'light rain': '50r',
   'moderate rain': 'r',
-  'shower rain': 'sh'
+  'shower rain': 'sh',
+  'heavy intensity rain': 'hr',
 };
 
 function getWeatherImage(desc) {
@@ -50,10 +51,10 @@ function getWeatherForecast(lat, lng) {
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
   )
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
       // console.log(json);
 
       let text = "<div class='weather'>";
@@ -66,15 +67,14 @@ function getWeatherForecast(lat, lng) {
         const currentMonth = currentDate.getMonth() + 1;
         if (currentMonth >= 10 || currentMonth <= 3) {
           hourGap = 13; // NZ
-        }
-        else {
+        } else {
           hourGap = 12; // NZ
         }
       } else if (lng > 117 && lng < 123) {
         hourGap = 8; // Philippins
       }
 
-      json.list.forEach(function(element, i) {
+      json.list.forEach(function (element, i) {
         if (i > 23) {
           return;
         }
@@ -108,10 +108,10 @@ function getCurrentWeather(lat, lng) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`
   )
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
       //console.log(json);
       const weatherDesc =
         getWeatherImage(json.weather[0].description) +
@@ -132,7 +132,7 @@ function handleGeoSuccess(position) {
   const longitude = position.coords.longitude;
   const coodsObj = {
     latitude,
-    longitude
+    longitude,
   };
   saveCoords(coodsObj);
   getCurrentWeather(latitude, longitude);
@@ -150,7 +150,8 @@ function askForCoords() {
 function loadCoords() {
   const loadedCoords = localStorage.getItem(COORDS);
   if (loadedCoords === null) {
-    weatherForecast.innerHTML = 'Please turn GPS on to know your location.<br>(Required only once)';
+    weatherForecast.innerHTML =
+      'Please turn GPS on to know your location.<br>(Required only once)';
     askForCoords();
   } else {
     const parsedCoords = JSON.parse(loadedCoords);
