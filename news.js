@@ -1,8 +1,8 @@
-String.prototype.trunc = function(n) {
+String.prototype.trunc = function (n) {
   return this.substr(0, n - 1) + (this.length > n ? '&hellip;' : '');
 };
 
-const saveCategory = category => {
+const saveCategory = (category) => {
   localStorage.setItem('newsCategory', category);
 };
 
@@ -14,7 +14,7 @@ const readNewsBySavedCategory = () => {
   getNewsByCategory(savedCatgory);
 };
 
-const selectButton = category => {
+const selectButton = (category) => {
   document.querySelector('.category-nz').classList.remove('selected');
   document.querySelector('.category-stuff').classList.remove('selected');
   document.querySelector('.category-bbc').classList.remove('selected');
@@ -37,7 +37,7 @@ const selectButton = category => {
   }
 };
 
-const getNewsByCategory = category => {
+const getNewsByCategory = (category) => {
   if (category === 'nz') {
     getNews('', 'nz', '');
     document.querySelector('.category-nz').classList.add('selected');
@@ -82,15 +82,15 @@ const getNews = (sources, country, domains) => {
     },
     body: JSON.stringify(clientRequest),
   })
-    .then(function(response) {
-      console.log(response);
+    .then(function (response) {
+      // console.log(response);
       return response.json();
     })
-    .then(function(json) {
+    .then(function (json) {
       console.log(json);
       textHTML = "<div class='articles-container overlay loading'>";
       //json.articles.forEach(article => {
-      json.forEach(article => {
+      json.forEach((article) => {
         textHTML += "<article class='card'>";
 
         if (localStorage.getItem('prevent-image') !== 'true') {
@@ -107,11 +107,10 @@ const getNews = (sources, country, domains) => {
                          <p class='article-title'>${article.title}</p>
                        </a>
                       <p class='article-description'>${
-                        article.description && (
-                          article.description.indexOf('����') !== -1 ?
-                          'Description of this article has errors.<br> Read the article by click.' :
-                          article.description
-                        )
+                        article.description &&
+                        (article.description.indexOf('����') !== -1
+                          ? 'Description of this article has errors.<br> Read the article by click.'
+                          : article.description)
                       }</p>
                     </div>
                   </article>`;
@@ -127,19 +126,14 @@ const getNews = (sources, country, domains) => {
           articleContainer.classList.remove('overlay');
           articleContainer.classList.remove('loading');
         }
-      }, 1000);    
+      }, 1000);
     });
 };
 
-const initializePreventImageCheckbox = () => {
-  const checkbox = document.querySelector('#image-prevent');
-  checkbox.addEventListener('click', () => {
-    localStorage.setItem('prevent-image', checkbox.checked);
-  });
-
-  //console.log('initial value:', localStorage.getItem('prevent-image'));
-  checkbox.checked = localStorage.getItem('prevent-image') === 'true';
-};
-
 readNewsBySavedCategory();
-initializePreventImageCheckbox();
+
+setInterval(function () {
+  if (localStorage.getItem('auto-refresh') === 'true') {
+    readNewsBySavedCategory();
+  }
+}, 1200000);

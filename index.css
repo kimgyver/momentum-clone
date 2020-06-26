@@ -54,6 +54,8 @@ body {
 #page-3 {
   background: var(--page-3-color);
   /* display: table-row; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 /* #page-4 {
   background: var(--page-4-color);
@@ -100,7 +102,7 @@ h1 {
   border-radius: 5px;
   margin-bottom: 0.5rem;
   margin: 0 0 0.2rem 0.2rem;
-  background:  #009cff;
+  background: #009cff;
 }
 
 @keyframes fadeIn {

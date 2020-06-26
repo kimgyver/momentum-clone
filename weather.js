@@ -147,8 +147,9 @@ function askForCoords() {
   navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 
-function loadCoords() {
+function loadCoordsAndWeather() {
   const loadedCoords = localStorage.getItem(COORDS);
+  console.log('loadCoordsAndWeather()', loadedCoords);
   if (loadedCoords === null) {
     weatherForecast.innerHTML =
       'Please turn GPS on to know your location.<br>(Required only once)';
@@ -161,7 +162,13 @@ function loadCoords() {
 }
 
 function init() {
-  loadCoords();
+  loadCoordsAndWeather();
 }
 
 init();
+
+setInterval(function () {
+  if (localStorage.getItem('auto-refresh') === 'true') {
+    init();
+  }
+}, 1200000);
