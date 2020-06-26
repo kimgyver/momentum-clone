@@ -10,6 +10,9 @@ const initializeSettingCheckbox = () => {
   const checkboxAutoRefresh = document.querySelector('#auto-refresh');
   checkboxAutoRefresh.addEventListener('click', () => {
     localStorage.setItem('auto-refresh', checkboxAutoRefresh.checked);
+    if (checkboxAutoRefresh.checked) {
+      readNewsBySavedCategory();
+    }
   });
 
   checkboxAutoRefresh.checked = localStorage.getItem('auto-refresh') === 'true';
