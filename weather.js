@@ -1,5 +1,3 @@
-// This is from master branch
-
 const API_KEY = 'db924aa1722406eb1fb28407c06cf5a0';
 const COORDS = 'coords';
 
