@@ -102,6 +102,8 @@ function getWeatherForecast(lat, lng) {
       text += '</div>'; // end of wether
       weatherForecast.innerHTML = text;
     });
+
+  console.log(object);
 }
 
 function getCurrentWeather(lat, lng) {
