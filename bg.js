@@ -1,16 +1,16 @@
-const body = document.querySelector('body');
+const body = document.querySelector("body");
 
-const IMG_NUMBER = 7;
+const IMG_NUMBER = 11;
 
 function paintImage(imgNumber) {
   const image = new Image();
   image.src = `images/${imgNumber + 1}.jpg`;
-  image.classList.add('bgImage');
+  image.classList.add("bgImage");
 
-  const page1 = document.querySelector('#page-1');
+  const page1 = document.querySelector("#page-1");
   //console.log(`url(${image.src})`);
 
-  if (localStorage.getItem('prevent-image') !== 'true') {
+  if (localStorage.getItem("prevent-image") !== "true") {
     page1.style.backgroundImage = `url(${image.src})`;
   }
 }
