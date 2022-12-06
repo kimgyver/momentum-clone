@@ -75,15 +75,15 @@ const getNews = (sources, country, domains) => {
   }
 
   const preventImage = localStorage.getItem("prevent-image") === "true";
-  fetch(url)
-    // const clientRequest = { url: url };
-    // fetch("https://request-proxy-jason.herokuapp.com/articles", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(clientRequest),
-    // })
+  // fetch(url)
+  const clientRequest = { url: url };
+  fetch("https://request-proxy-jason.herokuapp.com/articles", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(clientRequest),
+  })
     .catch(function (err) {
       console.log(err);
     })
@@ -94,8 +94,8 @@ const getNews = (sources, country, domains) => {
     .then(function (json) {
       console.log(json);
       textHTML = "<div class='articles-container overlay loading'>";
-      json.articles.forEach((article) => {
-        // json.forEach((article) => {
+      // json.articles.forEach((article) => {
+      json.forEach((article) => {
         textHTML += "<article class='card'>";
 
         if (localStorage.getItem("prevent-image") !== "true") {
